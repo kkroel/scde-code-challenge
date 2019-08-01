@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def main():
-    """Read 2 csv files, merge them, filter results and output a subset of columns to a new csv."""
+    """Read 2 csv files into dataframes, merge them, filter results and output a subset of columns to a new csv."""
     reg_file = r't2_registry 20190619.csv'
     ec_file = r't2_ec 20190619.csv'
     output_file = r'results.csv'
@@ -39,14 +39,14 @@ if __name__ == "__main__":
     main()
 
 
-#  --- used by pytest ---
-def setup_module():
-    import pytest
+#  --- used by pytest. uncommment if pytest is available ---
+# def setup_module():
+#     import pytest
 
 
 # test results with pytest
-def test_results():
-    final_df = main()
-    assert final_df['RID'].values.tolist() == [19, 17]
-    assert final_df['SVDOSE'].values.tolist() == ['Y', 'Y']
-    assert final_df['ECSDSTXT'].values.tolist() == [-4, 140]
+# def test_results():
+#     final_df = main()
+#     assert final_df['RID'].values.tolist() == [19, 17]
+#     assert final_df['SVDOSE'].values.tolist() == ['Y', 'Y']
+#     assert final_df['ECSDSTXT'].values.tolist() == [-4, 140]
